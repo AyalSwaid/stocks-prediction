@@ -3,10 +3,10 @@ Machine Learning project that predicts stocks behavior by analyzing tweets conte
 
 # Project Overview
 1. Find the emotion behind each tweet using nltk library(emotion is represented by a number between -1(negative) and 1(positive)).
-2. For each date in the stocks dataset, find the closest(by date) tweets to it, and then assign the tweets' mean compound(Emotion) value to the relevant stocks row in stocks set.
+2. For each date in the tweets dataset, find the closest(by date) stock value to it from the stocks dataset, and then assign the tweets' mean compound(Emotion) value to the relevant stocks row in stocks set.
 3. Analyze and preprocess the new merged dataset.
 4. Build a deep learning model to perform regression using keras package.
-5. Fit the model to the merged dataset, such that the target value is stock close value and the features are (open_value, date, compound(emotion))
+5. Fit the model to the merged dataset, such that the target value is stock close value and the features are (open_value, date, mean_emotion)
 6. Fit another model that predicts the close value but without the compound(emotion) feature
 7. Evaluate both models and find the difference.
 8. Conclusion
@@ -27,7 +27,7 @@ Machine Learning project that predicts stocks behavior by analyzing tweets conte
 
 ## Learning rate (without considering tweets)
 ![history no compound](https://user-images.githubusercontent.com/57876635/218338574-9302c2a6-f9e1-4645-81a5-b1e996427b9e.png)
-*Highe Variance and bias + overfitted
+*Highe Variance and bias + overfitted*
 
 ## Learning rate (with considering tweets)
 ![learning rate drawio (1)](https://user-images.githubusercontent.com/57876635/218339163-fab8fa26-54d2-425b-a818-894915fbf276.svg)
@@ -35,7 +35,7 @@ Machine Learning project that predicts stocks behavior by analyzing tweets conte
 ### A closer look on the learning rate
 ![closer_learning_rate drawio](https://user-images.githubusercontent.com/57876635/218339220-3799a9ba-8864-4de4-8558-68874b5a72c1.svg)
 
-#Conclusion
+# Conclusion
 
 The model with the compound value has more stable learning rate plot, unlike the model without the compound value its learning rate plot had a high variance and it semmed like it has some randomness with it.
 So we conclude that compound value, which is the tweets emotions scale, has a potential to affect the stocks values.
