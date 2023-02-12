@@ -1,0 +1,10 @@
+using only ANN
+5
+64 selu
+64 selu
+32 selu
+1 linear
+
+kernel_initializer='normal'
+
+loss = MSE
